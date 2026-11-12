@@ -114,13 +114,13 @@ Run the simulation:
 python main.py
 ```
 
-Launch the interactive dashboard:
+Launch the interactive dashboard from the project root:
 
 ```bash
-streamlit run app/dashboard.py
+streamlit run app/streamlit_app.py
 ```
 
-*These commands assume the corresponding modules have been implemented.*
+The dashboard provides adjustable SIR parameters, population and infection metrics, SIR trajectory plots, Euler/RK2/RK4 comparisons against a DOP853 reference, and numerical infection-growth analysis.
 
 ## Expected Results
 
