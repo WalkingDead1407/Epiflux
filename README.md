@@ -14,22 +14,30 @@ Epiflux Numerics is a Python-based Computational Methods project that simulates 
 
 ## Mathematical Model
 
-The SIR model is defined by:
+The SIR model divides a population of size N into three compartments and describes how people move between them over time:
 
-\[
-\frac{dS}{dt}=-\beta\frac{SI}{N}
-\]
+```
+dS/dt = −β · S · I / N
+dI/dt =  β · S · I / N − γ · I
+dR/dt =  γ · I
+```
 
-\[
-\frac{dI}{dt}=\beta\frac{SI}{N}-\gamma I
-\]
+The population is conserved at all times:
 
-\[
-\frac{dR}{dt}=\gamma I
-\]
+```
+S(t) + I(t) + R(t) = N
+```
 
-Where \(S\), \(I\), and \(R\) represent susceptible, infected, and recovered populations; \(\beta\) is the transmission rate, \(\gamma\) is the recovery rate, and \(N\) is the total population.
+| Symbol | Meaning |
+|--------|---------|
+| S(t) | Susceptible individuals |
+| I(t) | Infected individuals |
+| R(t) | Recovered individuals |
+| β | Transmission rate |
+| γ | Recovery rate |
+| N | Total population |
 
+The basic reproduction number is R₀ = β / γ. The infection grows when R₀ > 1 and dies out when R₀ < 1.
 ## Features
 
 - SIR epidemic simulation with adjustable parameters.
